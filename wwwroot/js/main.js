@@ -1,4 +1,19 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+(() => {
+  // src/Components/Card/Card.js
+  var Card = (() => {
+    "use strict";
+    function init() {
+      console.log("Card component loaded");
+    }
+    return {
+      init
+    };
+  })();
+  var Card_default = Card;
 
-// Write your JavaScript code.
+  // src/js/Main.js
+  var components = [
+    Card_default
+  ];
+  components.forEach((component) => component.init());
+})();
