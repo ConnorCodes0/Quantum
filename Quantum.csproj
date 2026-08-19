@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -7,10 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="src\Layouts\" />
     <Folder Include="src\Data\" />
     <Folder Include="src\Feedback\" />
     <Folder Include="src\Forms\" />
+    <Folder Include="src\Layouts\" />
     <Folder Include="wwwroot\css\" />
   </ItemGroup>
 

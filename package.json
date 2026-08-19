@@ -16,6 +16,12 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  "-vs-binding": {
+    "ProjectOpened": [
+      "watch:css",
+      "watch:js"
+    ]
+  },
   "devDependencies": {
     "chokidar-cli": "^3.0.0",
     "esbuild": "^0.28.2",
