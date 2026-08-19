@@ -6,4 +6,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="src\Layouts\" />
+    <Folder Include="src\Data\" />
+    <Folder Include="src\Feedback\" />
+    <Folder Include="src\Forms\" />
+    <Folder Include="wwwroot\css\" />
+  </ItemGroup>
+
 </Project>

@@ -3,13 +3,22 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:css": "sass src/scss/Main.scss wwwroot/css/main.css",
+    "build:css:min": "sass src/scss/Main.scss wwwroot/css/main.min.css --style=compressed",
+    "watch:css": "chokidar \"src/**/*.scss\" -c \"npm run build:css\"",
+
+    "build:js": "esbuild src/js/Main.js --bundle --outfile=wwwroot/js/main.js",
+    "build:js:min": "esbuild src/js/Main.js --bundle --minify --outfile=wwwroot/js/main.min.js",
+    "watch:js": "esbuild src/js/Main.js --bundle --outfile=wwwroot/js/main.js --watch",
+    "build": "npm run build:css && npm run build:css:min && npm run build:js && npm run build:js:min"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "esbuild": "^0.28.2",
     "sass": "^1.99.0"
   }
 }
