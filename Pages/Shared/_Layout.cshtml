@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
     <script type="importmap"></script>
+    <script src="https://kit.fontawesome.com/15cef5ea98.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></link>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/css/main.css" />
@@ -19,12 +21,81 @@
 <body>
     <div class="site">
         <header class="site__header">
+            <button type="button" class="navigationToggle" aria-label="Toggle navigation">
+                <i class="fa fa-solid fa-bars"></i>
+            </button>
             <h1 class="site__heading">Quantum</h1>
-            <nav class="navigation">
-                <a href="/" class="navigation__link">HOME</a>
-                <a href="#" class="navigation__link">ABOUT</a>
-            </nav>
         </header>
+
+        <div class="navigation">
+            <form class="navigation__search formControl">
+                <input type="text" placeholder="Search..." name="search" aria-label="navigation search bar" class="input input--search" />
+            </form>
+
+            <nav class="navigation__content">
+                <div class="navigation__group">
+                    <a href="/components/Card" class="navigation__link navigation__editorLink">Creator</a>
+                </div>
+
+                @* Components *@
+                <div class="navigation__group">
+                    <button type="button" class="navigation__groupToggle">Components</button>
+                    <ul>
+                        <li class="navigation__groupItem"><a href="/components/button" class="navigation__link">Button</a></li>
+                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Card</a></li>
+                    </ul>
+                </div>
+
+                @* Layouts *@
+                <div class="navigation__group">
+                    <button type="button" class="navigation__groupToggle">Layouts</button>
+                    <ul>
+                        <li class="navigation__groupItem"><a href="/components/button" class="navigation__link">Section</a></li>
+                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Auto Stack</a></li>
+                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Stack</a></li>
+                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Columns</a></li>
+                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Rows</a></li>
+                    </ul>
+                </div>
+
+                @* Data *@
+                <div class="navigation__group">
+                    <button type="button" class="navigation__groupToggle">Data</button>
+                    <ul>
+                        <li class="navigation__groupItem"><a href="/components/button" class="navigation__link">Grid</a></li>
+                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">List</a></li>
+                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Data Labels</a></li>
+                    </ul>
+                </div>
+
+                @* Forms *@
+                <div class="navigation__group">
+                    <button type="button" class="navigation__groupToggle">Forms</button>
+                    <ul>
+                        <li class="navigation__groupItem"><a href="/components/button" class="navigation__link">Text Input</a></li>
+                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Select</a></li>
+                        <li class="navigation__groupItem">
+                            <button type="button" class="navigation__groupToggle">Checkbox</button>
+                            <ul>
+                                <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Checkbox</a></li>
+                                <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Checkbox Group</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                @* Feedback *@
+                <div class="navigation__group">
+                    <button type="button" class="navigation__groupToggle">Feedback</button>
+                    <ul>
+                        <li class="navigation__groupItem"><a href="/components/button" class="navigation__link">Popup</a></li>
+                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Alert</a></li>
+                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Notification</a></li>
+                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Toast</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
         <main class="site__content">
             @RenderBody()

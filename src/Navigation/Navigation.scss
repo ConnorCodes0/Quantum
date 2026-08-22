@@ -1,0 +1,79 @@
+@use "../Variables";
+
+.navigation {
+    $block: &;
+    grid-area: navigation;
+    padding: var(--spacing) var(--spacing--double);
+    display: flex;
+    gap: var(--spacing);
+    flex-direction: column;
+    background: var(--site--header-background);
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        margin-inline: calc(var(--spacing--double) * -1);
+    }
+
+    &__group {
+        padding-inline-start: var(--spacing--double);
+
+        ul {
+            list-style: none;
+            display: none;
+            flex-direction: column;
+            background: var(--navigation--menu-background--open);
+            margin-inline-start: calc(var(--spacing--double) * -1);
+            padding-inline-start: calc(var(--spacing--double) + var(--spacing));
+        }
+
+        &--open > ul {
+            display: flex;
+        }
+    }
+
+    &__groupToggle,
+    &__link {
+        font-size: var(--font-size--small);
+        text-align: left;
+        padding: var(--spacing--half) 0;
+        width: 100%;
+    }
+
+    &__groupToggle {
+        background: none;
+        border: none;
+        padding-inline-end: var(--spacing);
+        display: flex;
+        justify-content: space-between;
+
+        &::after {
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: '\f078';
+            display: inline-block;
+            font-size: var(--font-size--small);
+        }
+    }
+
+    &__link {
+        display: block;
+        text-decoration: none;
+    }
+}
+
+.navigationToggle {
+    background: none;
+    border: none;
+    font-size: var(--font-size--large);
+    padding: var(--spacing--quarter);
+
+    @media (min-width: Variables.$navigationToggle--minWidth) {
+        display: none;
+    }
+}
