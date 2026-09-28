@@ -15,8 +15,10 @@ $navigationToggle--minWidth: 768px;
     --navigation--menu-background--open: #161616;
     --site--header-background: #121212;
     --site--content-background: #0e0e0e;
-    --primary: #ff7c17;
+    --color--primary: #e3721b;
     // Miscellaneous
     --border: 2px solid #373737;
     --content-border-radius: 10px;
+    --navigation-item-border-radius: 25px;
+    --transition: all 0.2s ease-in-out;
 }

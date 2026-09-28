@@ -10,7 +10,7 @@
 
     <environment include="Development">
         <link rel="stylesheet" href="~/css/main.css" />
-        <script type="module" src="~/js/main.js" defer></script>
+        <script type="module" src="~/js/Main.js" defer></script>
     </environment>
 
     <environment exclude="Development">
@@ -27,82 +27,83 @@
             <h1 class="site__heading">Quantum</h1>
         </header>
 
-        <div class="navigation">
-            <form class="navigation__search formControl">
-                <input type="text" placeholder="Search..." name="search" aria-label="navigation search bar" class="input input--search" />
-            </form>
+        <div class="site__navigationAndContent">
+            <div class="navigation">
+                <form class="navigation__search formControl">
+                    <input type="text" placeholder="Search..." name="search" aria-label="navigation search bar" class="input input--search" />
+                </form>
 
-            <nav class="navigation__content">
-                <div class="navigation__group">
-                    <a href="/components/Card" class="navigation__link navigation__editorLink">Creator</a>
-                </div>
+                <nav class="navigation__content">
+                    <div class="navigation__group">
+                        <button type="button" class="navigation__groupToggle">Projects</button>
+                        <ul>
+                            <li class="navigation__groupItem"><a asp-page="/Index" class="navigation__link" active-route="/">Creator</a></li>
+                            <li class="navigation__groupItem"><a asp-page="/Projects/ProjectOne" class="navigation__link" active-route="/Projects/ProjectOne">Project One</a></li>
+                        </ul>
+                        
+                    </div>
 
-                @* Components *@
-                <div class="navigation__group">
-                    <button type="button" class="navigation__groupToggle">Components</button>
-                    <ul>
-                        <li class="navigation__groupItem"><a href="/components/button" class="navigation__link">Button</a></li>
-                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Card</a></li>
-                    </ul>
-                </div>
+                    @* Components *@
+                    <div class="navigation__group">
+                        <button type="button" class="navigation__groupToggle">Components</button>
+                        <ul>
+                            <li class="navigation__groupItem"><a asp-page="/Components/Button" class="navigation__link" active-route="/Components/Button">Button</a></li>
+                            <li class="navigation__groupItem"><a asp-page="/Components/Card" class="navigation__link" active-route="/Components/Card">Card</a></li>
+                        </ul>
+                    </div>
 
-                @* Layouts *@
-                <div class="navigation__group">
-                    <button type="button" class="navigation__groupToggle">Layouts</button>
-                    <ul>
-                        <li class="navigation__groupItem"><a href="/components/button" class="navigation__link">Section</a></li>
-                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Auto Stack</a></li>
-                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Stack</a></li>
-                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Columns</a></li>
-                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Rows</a></li>
-                    </ul>
-                </div>
+                    @* Layouts *@
+                    <div class="navigation__group">
+                        <button type="button" class="navigation__groupToggle">Layouts</button>
+                        <ul>
+                            <li class="navigation__groupItem"><a asp-page="/Layout/Section" class="navigation__link" active-route="/Layout/Section">Section</a></li>
+                            <li class="navigation__groupItem"><a asp-page="/Layout/AutoStack" class="navigation__link" active-route="/Layout/AutoStack">Auto Stack</a></li>
+                            <li class="navigation__groupItem"><a asp-page="/Layout/Stack" class="navigation__link" active-route="/Layout/Stack">Stack</a></li>
+                            <li class="navigation__groupItem"><a asp-page="/Layout/Columns" class="navigation__link" active-route="/Layout/Columns">Columns</a></li>
+                            <li class="navigation__groupItem"><a asp-page="/Layout/Rows" class="navigation__link" active-route="/Layout/Rows">Rows</a></li>
+                        </ul>
+                    </div>
 
-                @* Data *@
-                <div class="navigation__group">
-                    <button type="button" class="navigation__groupToggle">Data</button>
-                    <ul>
-                        <li class="navigation__groupItem"><a href="/components/button" class="navigation__link">Grid</a></li>
-                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">List</a></li>
-                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Data Labels</a></li>
-                    </ul>
-                </div>
+                    @* Data *@
+                    <div class="navigation__group">
+                        <button type="button" class="navigation__groupToggle">Data</button>
+                        <ul>
+                            <li class="navigation__groupItem"><a asp-page="/Data/Grid" class="navigation__link" active-route="/Data/Grid">Grid</a></li>
+                            <li class="navigation__groupItem"><a asp-page="/Data/List" class="navigation__link" active-route="/Data/List">List</a></li>
+                            <li class="navigation__groupItem"><a asp-page="/Data/DataLabels" class="navigation__link" active-route="/Data/DataLabels">Data Labels</a></li>
+                        </ul>
+                    </div>
 
-                @* Forms *@
-                <div class="navigation__group">
-                    <button type="button" class="navigation__groupToggle">Forms</button>
-                    <ul>
-                        <li class="navigation__groupItem"><a href="/components/button" class="navigation__link">Text Input</a></li>
-                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Select</a></li>
-                        <li class="navigation__groupItem">
-                            <button type="button" class="navigation__groupToggle">Checkbox</button>
-                            <ul>
-                                <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Checkbox</a></li>
-                                <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Checkbox Group</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+                    @* Forms *@
+                    <div class="navigation__group">
+                        <button type="button" class="navigation__groupToggle">Forms</button>
+                        <ul>
+                            <li class="navigation__groupItem"><a asp-page="/Forms/TextInput" class="navigation__link" active-route="/Forms/TextInput">Text Input</a></li>
+                            <li class="navigation__groupItem"><a asp-page="/Forms/Select" class="navigation__link" active-route="/Forms/Select">Select</a></li>
+                            <li class="navigation__groupItem"><a asp-page="/Forms/Checkbox" class="navigation__link" active-route="/Forms/Checkbox">Checkbox</a></li>
+                            <li class="navigation__groupItem"><a asp-page="/Forms/CheckboxGroup" class="navigation__link" active-route="/Forms/CheckboxGroup">Checkbox Group</a></li>
+                        </ul>
+                    </div>
 
-                @* Feedback *@
-                <div class="navigation__group">
-                    <button type="button" class="navigation__groupToggle">Feedback</button>
-                    <ul>
-                        <li class="navigation__groupItem"><a href="/components/button" class="navigation__link">Popup</a></li>
-                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Alert</a></li>
-                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Notification</a></li>
-                        <li class="navigation__groupItem"><a href="/components/Card" class="navigation__link">Toast</a></li>
-                    </ul>
-                </div>
-            </nav>
+                    @* Feedback *@
+                    <div class="navigation__group">
+                        <button type="button" class="navigation__groupToggle">Feedback</button>
+                        <ul>
+                            <li class="navigation__groupItem"><a asp-page="/Feedback/Popup" class="navigation__link" active-route="/Feedback/Popup">Popup</a></li>
+                            <li class="navigation__groupItem"><a asp-page="/Feedback/Alert" class="navigation__link" active-route="/Feedback/Alert">Alert</a></li>
+                            <li class="navigation__groupItem"><a asp-page="/Feedback/Notification" class="navigation__link" active-route="/Feedback/Notification">Notification</a></li>
+                            <li class="navigation__groupItem"><a asp-page="/Feedback/Toast" class="navigation__link" active-route="/Feedback/Toast">Toast</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <main class="site__content">
+                @RenderBody()
+            </main>
         </div>
 
-        <main class="site__content">
-            @RenderBody()
-        </main>
-
         <footer class="site__footer">
-            
         </footer>
     </div>
 

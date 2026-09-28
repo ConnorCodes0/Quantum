@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Quantum.Pages
+namespace Quantum.Pages.Components
 {
-    public class IndexModel : PageModel
+    public class CardModel : PageModel
     {
         public void OnGet()
         {

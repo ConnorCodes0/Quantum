@@ -19,9 +19,8 @@
     grid-template-areas:
         "header header" "navigation content" "footer footer";
     grid-template-rows: min-content 1fr min-content;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr;
     background: var(--site--header-background);
-
 
     &__header {
         grid-area: header;
@@ -34,6 +33,12 @@
 
     &__heading {
         font-size: var(--font-size--large);
+    }
+
+    &__navigationAndContent {
+        display: grid;
+        grid-auto-columns: auto 1fr;
+        grid-template-areas: "navigation content";
     }
 
     &__content {
