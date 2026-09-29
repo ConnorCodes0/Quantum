@@ -1,0 +1,18 @@
+@mixin input-outline {
+    outline: var(--input--outline);
+    outline-offset: 2px;
+}
+
+@mixin icon($unicode) {
+    &::before {
+        content: $unicode;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        display: inline-block;
+        font-size: var(--font-size--small);
+    }
+}

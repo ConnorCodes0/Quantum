@@ -1,0 +1,16 @@
+@use "../../Variables";
+@use "../../MixinsAndPlaceholders";
+
+.input {
+    border: none;
+    padding: var(--spacing--half) var( --spacing);
+    border-radius: var(--input-border-radius);
+
+    &:focus {
+        @include MixinsAndPlaceholders.input-outline;
+    }
+
+    &--navigationSearch {
+        margin-inline: 0 calc(var(--spacing) * -1);
+    }
+}

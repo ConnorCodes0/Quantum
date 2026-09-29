@@ -30,14 +30,15 @@
         <div class="site__navigationAndContent">
             <div class="navigation">
                 <form class="navigation__search formControl">
-                    <input type="text" placeholder="Search..." name="search" aria-label="navigation search bar" class="input input--search" />
+                    <input type="text" placeholder="Search..." name="search" aria-label="navigation search bar" class="input input--navigationSearch" />
                 </form>
 
                 <nav class="navigation__content">
+                    <a asp-page="/Index" class="navigation__link navigation__link--creator" active-route="/">Creator</a>
+
                     <div class="navigation__group">
-                        <button type="button" class="navigation__groupToggle">Projects</button>
+                        <button type="button" class="navigation__groupToggle" data-icon="folder">Projects</button>
                         <ul>
-                            <li class="navigation__groupItem"><a asp-page="/Index" class="navigation__link" active-route="/">Creator</a></li>
                             <li class="navigation__groupItem"><a asp-page="/Projects/ProjectOne" class="navigation__link" active-route="/Projects/ProjectOne">Project One</a></li>
                         </ul>
                         
@@ -45,7 +46,7 @@
 
                     @* Components *@
                     <div class="navigation__group">
-                        <button type="button" class="navigation__groupToggle">Components</button>
+                        <button type="button" class="navigation__groupToggle" data-icon="puzzle">Components</button>
                         <ul>
                             <li class="navigation__groupItem"><a asp-page="/Components/Button" class="navigation__link" active-route="/Components/Button">Button</a></li>
                             <li class="navigation__groupItem"><a asp-page="/Components/Card" class="navigation__link" active-route="/Components/Card">Card</a></li>
@@ -54,7 +55,7 @@
 
                     @* Layouts *@
                     <div class="navigation__group">
-                        <button type="button" class="navigation__groupToggle">Layouts</button>
+                        <button type="button" class="navigation__groupToggle" data-icon="layout">Layouts</button>
                         <ul>
                             <li class="navigation__groupItem"><a asp-page="/Layout/Section" class="navigation__link" active-route="/Layout/Section">Section</a></li>
                             <li class="navigation__groupItem"><a asp-page="/Layout/AutoStack" class="navigation__link" active-route="/Layout/AutoStack">Auto Stack</a></li>
@@ -66,7 +67,7 @@
 
                     @* Data *@
                     <div class="navigation__group">
-                        <button type="button" class="navigation__groupToggle">Data</button>
+                        <button type="button" class="navigation__groupToggle" data-icon="table">Data</button>
                         <ul>
                             <li class="navigation__groupItem"><a asp-page="/Data/Grid" class="navigation__link" active-route="/Data/Grid">Grid</a></li>
                             <li class="navigation__groupItem"><a asp-page="/Data/List" class="navigation__link" active-route="/Data/List">List</a></li>
@@ -76,7 +77,7 @@
 
                     @* Forms *@
                     <div class="navigation__group">
-                        <button type="button" class="navigation__groupToggle">Forms</button>
+                        <button type="button" class="navigation__groupToggle" data-icon="form">Forms</button>
                         <ul>
                             <li class="navigation__groupItem"><a asp-page="/Forms/TextInput" class="navigation__link" active-route="/Forms/TextInput">Text Input</a></li>
                             <li class="navigation__groupItem"><a asp-page="/Forms/Select" class="navigation__link" active-route="/Forms/Select">Select</a></li>
@@ -87,7 +88,7 @@
 
                     @* Feedback *@
                     <div class="navigation__group">
-                        <button type="button" class="navigation__groupToggle">Feedback</button>
+                        <button type="button" class="navigation__groupToggle" data-icon="alert">Feedback</button>
                         <ul>
                             <li class="navigation__groupItem"><a asp-page="/Feedback/Popup" class="navigation__link" active-route="/Feedback/Popup">Popup</a></li>
                             <li class="navigation__groupItem"><a asp-page="/Feedback/Alert" class="navigation__link" active-route="/Feedback/Alert">Alert</a></li>

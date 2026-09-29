@@ -1,3 +1,4 @@
+$icons: ( "folder": "\f07b", "puzzle": "\f12e", "table": "\f0db", "layout": "\f009", "form": "\f044", "alert": "\f071");
 $navigationToggle--minWidth: 768px;
 
 :root {
@@ -18,7 +19,9 @@ $navigationToggle--minWidth: 768px;
     --color--primary: #e3721b;
     // Miscellaneous
     --border: 2px solid #373737;
+    --input--outline: 1px solid #ffffff;
     --content-border-radius: 10px;
+    --input-border-radius: 25px;
     --navigation-item-border-radius: 25px;
     --transition: all 0.2s ease-in-out;
 }
