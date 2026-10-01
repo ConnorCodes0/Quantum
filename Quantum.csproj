@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="TagHelpers\" />
     <Folder Include="src\Data\" />
     <Folder Include="src\Feedback\" />
-    <Folder Include="src\Forms\" />
     <Folder Include="src\Layouts\" />
     <Folder Include="wwwroot\css\" />
   </ItemGroup>

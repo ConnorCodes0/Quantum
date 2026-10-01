@@ -1,0 +1,27 @@
+$icons: ( "folder": "\f07b", "puzzle": "\f12e", "table": "\f0db", "layout": "\f009", "form": "\f044", "alert": "\f071");
+$navigationToggle--minWidth: 768px;
+
+:root {
+    --font-family: 'Inter', sans-serif;
+    // Spacing
+    --spacing: 1rem;
+    --spacing--half: calc(var(--spacing) / 2);
+    --spacing--double: calc(var(--spacing) * 2);
+    --spacing--quarter: calc(var(--spacing) / 4);
+    // Font Size
+    --font-size: 1rem;
+    --font-size--small: calc(var(--font-size) * 0.875);
+    --font-size--large: calc(var(--font-size) * 1.25);
+    // Colors
+    --navigation--menu-background--open: #161616;
+    --site--header-background: #121212;
+    --site--content-background: #0e0e0e;
+    --color--primary: #e3721b;
+    // Miscellaneous
+    --border: 2px solid #373737;
+    --input--outline: 1px solid #ffffff;
+    --content-border-radius: 10px;
+    --input-border-radius: 25px;
+    --navigation-item-border-radius: 25px;
+    --transition: all 0.2s ease-in-out;
+}

@@ -1,3 +1,54 @@
 @use "../Variables";
 @use "../MixinsAndPlaceholders";
+@use "../Navigation/Navigation";
 @use "../Components/Card/Card";
+@use "../Forms/Input/Input";
+
+// Global site styling
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    color: #fff;
+}
+
+.site {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas:
+        "header header" "navigation content" "footer footer";
+    grid-template-rows: min-content 1fr min-content;
+    grid-template-columns: 1fr;
+    background: var(--site--header-background);
+
+    &__header {
+        grid-area: header;
+        padding: var(--spacing) var(--spacing--double);
+        background: var(--site--header-background);
+        display: flex;
+        gap: var(--spacing);
+        align-items: center;
+    }
+
+    &__heading {
+        font-size: var(--font-size--large);
+    }
+
+    &__navigationAndContent {
+        display: grid;
+        grid-auto-columns: auto 1fr;
+        grid-template-areas: "navigation content";
+    }
+
+    &__content {
+        grid-area: content;
+        background: var(--site--content-background);
+        border-start-start-radius: var(--content-border-radius);
+    }
+}
+
+.footer {
+    display: none;
+}

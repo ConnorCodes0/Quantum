@@ -1,0 +1,145 @@
+@use "../Variables";
+@use "../MixinsAndPlaceholders";
+
+.navigation {
+    $block: &;
+    grid-area: navigation;
+    padding: var(--spacing) var(--spacing--double);
+    display: flex;
+    gap: var(--spacing);
+    flex-direction: column;
+    background: var(--site--header-background);
+    position: relative;
+    transform: translateX(-100%);
+    transition: var(--transition);
+    display: none;
+
+    &--open {
+        transform: translateX(0);
+        display: flex;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        margin-inline: calc(var(--spacing--double) * -1);
+    }
+
+    &__group {
+        padding-inline-start: var(--spacing--double);
+
+        ul {
+            list-style: none;
+            display: none;
+            flex-direction: column;
+            margin-inline-start: calc(var(--spacing--double) * -1);
+            padding-inline-start: calc(var(--spacing--double) + var(--spacing));
+            background: var(--navigation--menu-background--open);
+        }
+
+        &--open > ul {
+            display: flex;
+        }
+    }
+
+    &__groupItem {
+        border-top-right-radius: var(--navigation-item-border-radius);
+        border-bottom-right-radius: var(--navigation-item-border-radius);
+    }
+
+        &__groupItem:has(> .navigation__link--active) {
+            margin-inline-start: calc((var(--spacing--double) + var(--spacing)) * -1);
+            background: var(--color--primary);
+        }
+
+    &__groupToggle,
+    &__link {
+        font-size: var(--font-size--small);
+        text-align: left;
+        padding: calc(var(--spacing--half) + var(--spacing--quarter)) 0;
+        width: 100%;
+    }
+
+    &__groupToggle {
+        background: none;
+        border: none;
+        padding-inline-end: var(--spacing);
+        font-weight: bold;
+        display: flex;
+        gap: var(--spacing);
+
+        @each $name, $unicode in Variables.$icons {
+            &[data-icon="#{$name}"]::before {
+                content: $unicode;
+            }
+        }
+
+        &::before {
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            display: inline-block;
+            font-size: var(--font-size--small);
+        }
+
+        &::after {
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: '\f054';
+            display: inline-block;
+            font-size: var(--font-size--small);
+            margin-inline-start: auto;
+
+            #{$block}__group--open & {
+                content: '\f078';
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+        text-decoration: none;
+
+        &--active:not(.navigation__link--creator) {
+            font-weight: bold;
+            padding-inline-start: calc(var(--spacing--double) + var(--spacing));
+        }
+
+        &--creator {
+            padding-inline-start: var(--spacing--double);
+            font-weight: bold;
+            display: flex;
+            gap: var(--spacing);
+            @include MixinsAndPlaceholders.icon("\f0fe");
+
+            &.navigation__link--active {
+                background: var(--color--primary);
+                border-top-right-radius: var(--navigation-item-border-radius);
+                border-bottom-right-radius: var(--navigation-item-border-radius);
+            }
+        }
+    }
+
+    @media (min-width: Variables.$navigationToggle--minWidth) {
+        transform: translateX(0);
+        display: flex;
+    }
+}
+
+.navigationToggle {
+    background: none;
+    border: none;
+    font-size: var(--font-size--large);
+    padding: var(--spacing--quarter);
+
+    @media (min-width: Variables.$navigationToggle--minWidth) {
+        display: none;
+    }
+}
